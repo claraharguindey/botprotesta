@@ -1,0 +1,16 @@
+{
+  "name": "laboratorio-de-protesta-especulativa",
+  "version": "1.0.0",
+  "description": "Laboratorio de protesta especulativa twitter bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clara Harguindey",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.11",
+    "dotenv": "8.2.0"
+  }
+}
