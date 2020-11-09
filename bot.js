@@ -3,16 +3,17 @@ const tweets = require("./tweets");
 const Twit = require("twit");
 const T = new Twit(config);
 
-const randomNumber = Math.floor(Math.random() * tweets.length);
+const randomTweetIndex = Math.floor(Math.random() * tweets.length);
+const time = 1000 * 43200;
 
 tweet();
-setInterval(tweet, 1000 * 43200);
+setInterval(tweet, time);
 
 function tweet() {
-  const currentTweet = tweets[randomNumber];
+  const currentTweet = tweets[randomTweetIndex];
   T.post("statuses/update", { status: currentTweet }, tweeted);
 
-  tweets.splice(randomNumber, 1);
+  tweets.splice(randomTweetIndex, 1);
 
   function tweeted(err, data, response) {
     err
